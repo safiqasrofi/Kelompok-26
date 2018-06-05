@@ -373,14 +373,14 @@ p {
 
 
 #Home {
-  height: 25%;
+  height: 100%;
 }
 
 
 /* ----- Hero Section Styling Starts ----- */
 
 .hero-section {
-	height: 25%;
+	height: 100%;
 	background: #FFFFFF;
 	padding: 150px 0 0 0;
 }
@@ -455,6 +455,7 @@ p {
 .home{
     background: url(../images/head_bg.png) no-repeat center center;
     background-size: cover;
+
 }
 .home_skew_border{
     position: relative;
@@ -481,8 +482,8 @@ p {
     border-left: 680px solid transparent;
 }
 .main_home{
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 2500px;
+    padding-bottom: 250px;
     display: block;
 }
 
