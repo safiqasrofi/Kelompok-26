@@ -1,41 +1,65 @@
 <!doctype html>
 <html>
 <head>
- <title>Contact Form</title>
- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
- <link href="style.css" rel="stylesheet">
+ <title>LET'S-GO|Contact</title>
+    
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,500' rel='stylesheet' type='text/css'>
+    <link href='custom.css' rel='stylesheet' type='text/css'>
 </head>
  <body>
  
- <header class="ccheader">
-  <h1>Contact Form</h1> 
- </header>
- <div class="wrapper">
-  <form method="post" action="" class="ccform">
-  <div class="ccfield-prepend">
-   <span class="ccform-addon"><i class="fa fa-user fa-2x"></i></span>
-   <input class="ccformfield" type="text" placeholder="Full Name" required>
-  </div>
-  <div class="ccfield-prepend">
-   <span class="ccform-addon"><i class="fa fa-envelope fa-2x"></i></span>
-   <input class="ccformfield" type="email" placeholder="Email" required>
-  </div>
-  <div class="ccfield-prepend">
-   <span class="ccform-addon"><i class="fa fa-mobile-phone fa-2x"></i></span>
-   <input class="ccformfield" type="number" placeholder="Phone">
-  </div>
-   <div class="ccfield-prepend">
-   <span class="ccform-addon"><i class="fa fa-info fa-2x"></i></span>
-   <input class="ccformfield" type="text" placeholder="Subject" required>
-  </div>
-  <div class="ccfield-prepend">
-   <span class="ccform-addon"><i class="fa fa-comment fa-2x"></i></span>
-   <textarea class="ccformfield" name="comments" rows="8" placeholder="Message" required></textarea>
-  </div>
-  <div class="ccfield-prepend">
-   <input class="ccbtn" type="submit" value="Submit">
-  </div>
-  </form>
+ 
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<div class="container" ng-app="contact">
+<div class="col-md-5 controls app-features offset-xl-3">
+
+    <div class="form-area" ng-controller="formCtrl">  
+        <form role="form" name="inquiryForm" novalidate>
+        <br style="clear:both;">
+                    <h1 style="margin-bottom: 25px; text-align: center;">Contact Form</h1>
+                    <div class="controls">
+                        
+                        <div class="form-group" style="text-align: center;">
+            <input name="name" ng-model="name" id="nme" type="text" ng-pattern="nam" ng-required="true" autocomplete="off" placeholder="Full Name" class="form-control" >
+            
+            <span class="red-text" ng-if="inquiryForm.email.$error.required && inquiryForm.email.$dirty">Full name is a required field</span>
+            
+          </div>
+
+
+
+          <div class="form-group">
+            <input name="email" ng-model="email" id="eml" type="text" ng-pattern="eml_add" ng-required="true" autocomplete="off" placeholder="Email" class="form-control" >
+            
+            <span class="red-text" ng-if="inquiryForm.email.$error.required && inquiryForm.email.$dirty">Email is a required field</span>
+            
+            <span class="red-text" ng-show="inquiryForm.email.$error.pattern">Invalid Email</span>
+          </div>
+          <div class="form-group">
+            <input name="contact" ng-model="contact" id="c_num" type="text" ng-required="true" ng-pattern="ph_numbr" autocomplete="off" placeholder="Contact Number" class="form-control">
+            
+            <span class="red-text" ng-if="inquiryForm.contact.$error.required && inquiryForm.contact.$dirty">Contact number is a required field</span>
+            <span class="red-text" ng-show="inquiryForm.contact.$error.pattern">Please enter a 12 digit number</span>
+            
+          </div>
+        </div>
+
+            
+        <button type="button" id="submit" name="submit" class="btn btn-primary pull-right" ng-disabled="inquiryForm.$invalid">Submit Form</button>
+        <a href="home.html"><button  type="button" id="submit" name="submit" class="btn btn-primary">Home</button></a>
+        </form>
+    </div>
+</div>
+</div>
+
  </div>
+
+ <script src="js/angular.js"></script> 
+
+
 </body>
 </html>
